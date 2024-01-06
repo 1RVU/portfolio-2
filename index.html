@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYED SAQEEB - PERSONAL PORTFOLIO</title>
+    <style>
+         body {
+           /* display: flex;*/
+            font-family:'Roboto', sans-serif;
+            /*flex-direction: column;
+            align-items: center;
+            justify-content: center;*/
+            margin: 0;
+            line-height: 1.6;
+
+        }
+
+        header {
+            background-color:orange;
+            color:rgb(255, 255, 255);
+            text-align: center;
+            padding: 20px;
+           /* width:100%;*/
+            height:10%;
+            /*top: 0;*/
+            
+          
+        }
+        h2
+        {
+            color:#7e001f;
+            margin-bottom: 20px;
+        }
+        #profile-picture {
+            width: 150px; 
+            height: 200px; 
+            border-radius: 10%; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            margin-bottom: 20px; 
+        }
+        #personal
+        {
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            background-color: blue;
+            text-align: center;
+            position: fixed;
+            bottom: 0px;
+            top:0px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            display: block;
+            padding: 15px;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: rgb(171, 198, 198);
+        }
+
+        section {
+            margin: 120px 20px 20px 25%;
+            padding:50px;
+            background-color: rgb(171, 198, 198);
+            border-radius: 5px;
+            transition: margin 0.5s ease;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+        }
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        hr {
+            border: 1px solid #ccc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            clear: both;
+        }
+        header.scrolled {
+            background-color: rgba(51, 51, 51, 0.8);
+        }
+        .fade-in {
+            opacity: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            opacity: 0; 
+            transition: opacity 1s; 
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #000000;
+            color: white;
+        }
+        tr{
+            background-color: whitesmoke;
+        }
+
+        tr:hover {
+            background-color: #df98f1;
+        }
+        dt
+        {
+            font-weight: bold;
+            font-style:italic;
+        }
+       
+    </style>
+</head>
+<body>
+
+    <header class="scrolled">
+        <h1>SYED SAQEEB</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#personal-info">Personal Information</a></li>
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#work-experience">Work Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#references">References</a></li>
+            
+        </ul>
+    </nav>
+
+    
+    <section id="personal-info">
+        <h2>Personal Information</h2>
+        <ul id="personal-info-details">
+            <img id="profile-picture" src="SYED.jpg"  alt="Profile picture">
+                    <li style="opacity: 0; transition: opacity 1s;">PROFILE PHOTO :&nbsp; </li>
+                    <li style="opacity: 0; transition: opacity 1s;">  NAME:&nbsp;SYED SAQEEB</li>
+                    <li style="opacity: 0; transition: opacity 1s;"> LINKEDIN :&nbsp;<a href="www.linkedin.com/in/syed-saqeeb-409027298" target="_blank" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAllBMVEUMZMX///8AYcQAWcFDf8nL3PIAWrzQ3vMAYcI0eclZjtAucslAgsz6/v3x9/sgbclOhM8AX8QAYsAAX70AV70AWMLm7vgAXb4sdsw5fsoRbsVmltK6z+iUt+AMZcGDrN3c6fNvnddiltWqwuPA0+r0+vyOrt+lweR9pduuyueUst9Lh81pldd1mtYdbcunxOXO4u7Z4fGRyVlRAAAEKUlEQVR4nO3ce1faMBzG8SblEpSCiUUuQrkMhsCc+v7f3Ko4KjW/yLY0WXOez9mf4Ml3vSW1NYoAAAAAAAAAAAAAAAAAAAAAAAAAAADgYiriIsqU72FURcapGnXHk5aMue+xVCCT6n56x960Z2OpMt8jsozz+Xve0Xqc+h6SXbKzYOeSfex7UBap+J591lThHI3awPxw5KGcVFUj0RayaRrI6UaUj8GTpfA9NivknApkvTC2YdwjC9lc+h6dBWpFB7JFCIXx1FDIRr6HZ0Fq2EkZewjgXNMnLhVH34a+x/fPeMdYOK3/gchvTIFsXf/ZKR+bC+u/DcW1cS/d1f84jFobU+H3ANYXadNU2PU9PAvkd0Ngz/forMgMhU/1P5Xm4h0ZmHQCOAzz68WEPNdsg9iE+ZH4QATeBTApPYqf9PvoKIh99E2qOxQ3jVvf47JHDT5fMl5GAQW+3tNvnF/4N3shwrhJc8Ljw/Q0Q13MJ4GcRc8IORjP99vZfpWlQe2gH3EZx7Gs/4IJAADqQ3DJX/+FM38vqHyKlA5Hhx+Pj49X43468P34CheEiz9Z+pTMlrvFaQ6YbNrblRpKf6vNbHRNKX2yT/kwSVd5XluzGGs//Ew9NfIGS/RYs3X2yUGzp7dpnMYu+zPql1mbp46f+XxeSCkVxrpt8+bmWJgJOTPeYP7m5QkWi4Wye0d94t3m3sNmtFao5OyLvle7zPnRaKlQCb6+IDBfXvddJ1oq5BH5WE7JXd/xwWilUKnJpYGM9a7dPk5mpfCWP18cmO+okdOtaKVwYHxm5ZP1wOWNPBuFneUfBTK2dHkzyEbhwfirco3NxOF+aqPw8rPMbzuHV34bhX+h4e6q6KnQ4ZM6ngrZyNlG9FXo7hfMvgp7zt7o8FXIDq52U2+FznbTKgovmgAsalq4mB0mQqjJYfvler98o6sWhevuYPh2C5jz4WD1ReMPR4soi4W91dmtXy7MK469o7mpvcLn8nRaSWPi9PzH/++FCXvW3LuXpoXxi6MllK1tqHtGLBMd0zccLYNtFR60W8T0wkqv7yTQVuGTfpfLuvRXkms3sxo7hQlx/yy7NayOO3Uq3MXExY148PFY6OZyYafwihqsXNJfGteoMCGXQoYfzxo1KmxSO2kkJvTLcXUq3BreraFnp3UqNLwT3aJPpnUqPNBjTV+CKDScFVv0t+pUaLiytegXq1BoCQoLKNRDYfVQWEChHgqrh8ICCvVQWD0UFlCoh8LqobCAQj0UVg+FBRTqobB6KCygUA+F1UNhAYV6KKweCgso1ENh9VBYQKEeCquHwkKAhe1SIf2UoaFwSP+/dB29FtTvUsbnH+Q3VxTDmxOq+zffskqJiOtFpZda+OV/M6uQKepLof0NWAAAAAAAAAAAAAAAAAAAAAAAAAAAgAr8Aj5RWY0PDbn2AAAAAElFTkSuQmCC" style="width:30px;height:30px;" alt="Linkedin_profile"></a></li>
+                    <li style="opacity: 0; transition: opacity 1s;">MAIL TO :&nbsp; <a href="mailto:ssaqeeb14@gmail.com" target="_blank" style="text-decoration:none;">ssaqeeb14@gmail.com</a></li>
+                    <li style="opacity: 0; transition: opacity 1s;">TELEPHONE NO :&nbsp;<a href="tel:9880026191" target="_blank" style="text-decoration:none;"> 9880026191</a></li>
+                    <li style="opacity: 0; transition: opacity 1s;">DOB :&nbsp; 28th MAY, 2005</li>
+                    <li style="opacity: 0; transition: opacity 1s;">CITY : &nbsp;Bengaluru </li>
+                    
+                    
+                </ul>
+                    
+                </section>
+            
+                
+    <section id="summary">
+    <h2>Summary</h2>
+            <p style="font-family:Helvetica;">
+            Experienced web designer skilled in creating visually appealing and user-friendly websites.
+            <br>Proficient in web design tools and front-end development. Strong collaborator and detail-oriented.
+            <br>Proficiency in <u>Graphic design software</u> such as Adobe Photoshop, Illustrator.
+             </p>
+    </section>
+                        
+                            
+    <section id="education">
+            <h2>Education</h2>
+        <table id="education-table" style="font-family:courier;border:3px solid Black;width:100%;">
+        <tr>
+        <th><u><b>Course</b></u></th>
+        <th><u><b>School/University</b></u></th>
+        <th><u><b>Marks/CGPA</b></u></th>
+        </tr>
+        <tr>
+            <td>SSLC (STATE)</td>
+            <td>PRESIDENCY SCHOOL</td>
+            <td>93%</td>
+        <tr>
+            <td>2nd PUC (STATE BOARD)</td>
+            <td> ASCENT PU COLLEGE</td>
+            <td>94%</td>
+        </tr>
+        <tr>
+            <td>Bachelor of Science in Web Design and Development  </td>
+            <td> R V UNIVERSITY </td>
+            <td>8.3 CGPA</td>
+            </tr>
+    </table>
+        
+    </section>
+                        
+                            
+    <section id="work-experience">
+    <h2>Work Experience</h2>
+        <h3>Job Title</h3>
+    <dl id="work-list">
+        <dt>Web Designer at Imaginative Solutions Inc.</dt>
+                                    
+        <dd style="opacity: 0; transition: opacity 1s;">-Worked here for 1 year under the Graphics Design team for completing a project successfully.</dd>
+                                    
+        <dt>Freelance Web Designer</dt>
+                                    
+     <dd style="opacity: 0; transition: opacity 1s;">-Worked here for 2 years as client communicator, UX designer as well as the head of the Graphics Designing team. </dd>
+     
+     </dl>
+ </section>
+                        
+                            
+    <section id="skills">
+        <h2>Skills</h2>
+    <ul id="skills-list">
+     <li style="opacity: 0; transition: opacity 1s;">Web Design</li>
+    <li style="opacity: 0; transition: opacity 1s;">User Experience (UX) Design</li>
+    <li style="opacity: 0; transition: opacity 1s;">User Interface (UI) Design</li>
+    <li style="opacity: 0; transition: opacity 1s;">Graphic designing</li>
+    <li style="opacity: 0; transition: opacity 1s;">HTML, CSS, JavaScript</li>
+    <li style="opacity: 0; transition: opacity 1s;">Adobe Creative Suite</li>
+    <li style="opacity: 0; transition: opacity 1s;">Responsive Design</li>
+    <li style="opacity: 0; transition: opacity 1s;">SEO Optimization</li>
+     </ul>
+    </section>
+                        
+                            
+    <section id="projects">
+     <h2>Projects</h2>
+        <ul id="project-list">
+        <li style="opacity: 0; transition: opacity 1s;" >Designing logos, banners, and other branding elements for online use for customers.</li>
+        <li style="opacity: 0; transition: opacity 1s;">Providing ongoing support and maintenance for websites created by team.</li>
+        <li style="opacity: 0; transition: opacity 1s;"> Creating graphics and visuals for web use in one of the projects of my team.</li>
+        </ul>
+    </section>
+    <section id="certificates">
+     <h2>Certificates</h2>
+     <ul id="cert-list">
+    <li style="opacity: 0; transition: opacity 1s;" >Certified Web Designer (CWD)</li>
+     <li style="opacity: 0; transition: opacity 1s;">Adobe Certified Associate (ACA)</li>
+     </ul>
+    </section>
+                        
+                           
+    <section id="references">
+    <h2>References</h2>
+     <p>Available upon request</p>
+    </section>
+                        
+                            
+    <hr>
+                        
+                            
+    <footer>
+    <p style="color:red">&copy; 2024 SYED SAQEEB. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            
+
+            
+            window.addEventListener('scroll', function () {
+            const offset = window.scrollY;
+           /*document.querySelector('header').style.backgroundPositionY = offset * 0.5 + 'px';*/
+        });
+        window.addEventListener('scroll', function() {
+                var scrollPosition = window.scrollY;
+
+                if (scrollPosition > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            var educationSection = document.getElementById('education');
+            var table = document.getElementById('education-table');
+
+            
+            var rect = educationSection.getBoundingClientRect();
+
+            
+            if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                setTimeout(function() {
+                    table.style.opacity = 1;
+                }, 500); 
+            }
+        });
+        window.addEventListener('scroll', function() {
+            var skillsSection = document.getElementById('skills');
+            var personalInfoSection = document.getElementById('personal-info');
+            var skillsListItems = document.querySelectorAll('#skills-list li');
+            var personalInfoItems = document.querySelectorAll('#personal-info-details li');
+            var workSection = document.getElementById('work-experience');
+            var workListItems = document.querySelectorAll('#work-list dd');
+            var projectSection = document.getElementById('projects');
+            var projectListItems = document.querySelectorAll('#project-list li');
+            var certSection = document.getElementById('certificates');
+            var certListItems = document.querySelectorAll('#cert-list li');
+
+            
+            var skillsRect = skillsSection.getBoundingClientRect();
+
+            
+            if (skillsRect.top <= window.innerHeight && skillsRect.bottom >= 0) {
+                skillsListItems.forEach(function(item, index) {
+                    setTimeout(function() {
+                        item.style.opacity = 1;
+                    }, index * 500); 
+        
+                });
+            }
+            var personalInfoRect = personalInfoSection.getBoundingClientRect();
+
+            
+if (personalInfoRect.top <= window.innerHeight && personalInfoRect.bottom >= 0) {
+    personalInfoItems.forEach(function(item, index) {
+        setTimeout(function() {
+            item.style.opacity = 1;
+        }, index * 500); 
+
+    });
+}
+
+var workListRect = workSection.getBoundingClientRect();
+
+if (workListRect.top <= window.innerHeight && workListRect.bottom >= 0) {
+    workListItems.forEach(function(item, index) {
+        setTimeout(function() {
+            item.style.opacity = 1;
+        }, index * 1000); 
+
+    });
+}
+var projectInfoRect = projectSection.getBoundingClientRect();
+            if (projectInfoRect.top <= window.innerHeight && projectInfoRect.bottom >= 0) {
+                projectListItems.forEach(function(item, index) {
+                    setTimeout(function() {
+                    item.style.opacity = 1;
+                     }, index * 500); 
+                });
+            }
+ var certInfoRect = certSection.getBoundingClientRect();
+    if (certInfoRect.top <= window.innerHeight && certInfoRect.bottom >= 0) 
+            {
+        certListItems.forEach(function(item, index) {
+            setTimeout(function() {
+                item.style.opacity = 1;
+             }, index * 500);
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
+                        
+                            
+    
+
+                                                                                                           
+ 
